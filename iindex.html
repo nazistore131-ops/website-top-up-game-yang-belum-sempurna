@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopUp Game Store</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+    body { margin: 0; background: #0f172a; color: #e5e7eb; }
+    header { padding: 20px; background: #020617; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; color: #38bdf8; }
+    nav a { color: #e5e7eb; margin-left: 15px; text-decoration: none; }
+    .hero { padding: 60px 20px; text-align: center; background: linear-gradient(135deg,#020617,#0f172a); }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p { color: #94a3b8; }
+    .games { padding: 40px 20px; max-width: 1100px; margin: auto; }
+    .game-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+    .game-card { background: #020617; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,.3); }
+    .game-card img { width: 100%; border-radius: 10px; }
+    .game-card h3 { margin: 15px 0 10px; }
+    .game-card button { padding: 10px 16px; border: none; border-radius: 8px; background: #38bdf8; color: #020617; cursor: pointer; font-weight: bold; }
+    .form-section { padding: 40px 20px; max-width: 600px; margin: auto; display: none; }
+    .form-section h3 { text-align: center; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 6px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 8px; border: none; }
+    .submit-btn { width: 100%; padding: 12px; background: #22c55e; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; }
+    footer { padding: 20px; text-align: center; background: #020617; color: #94a3b8; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GameTopUp</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#games">Game</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Top Up Game Cepat & Aman</h2>
+    <p>Mobile Legends, Free Fire, Roblox, dan lainnya</p>
+  </section>
+
+  <section class="games" id="games">
+    <h2>Pilih Game</h2>
+    <div class="game-grid">
+      <div class="game-card">
+        <img src="https://via.placeholder.com/300x180?text=Mobile+Legends" />
+        <h3>Mobile Legends</h3>
+        <button onclick="openForm('Mobile Legends')">Top Up</button>
+      </div>
+      <div class="game-card">
+        <img src="https://via.placeholder.com/300x180?text=Free+Fire" />
+        <h3>Free Fire</h3>
+        <button onclick="openForm('Free Fire')">Top Up</button>
+      </div>
+      <div class="game-card">
+        <img src="https://via.placeholder.com/300x180?text=Roblox" />
+        <h3>Roblox</h3>
+        <button onclick="openForm('Roblox')">Top Up</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" id="topupForm">
+    <h3 id="gameTitle"></h3>
+    <div class="form-group">
+      <label>User ID</label>
+      <input type="text" placeholder="Masukkan ID" />
+    </div>
+    <div class="form-group">
+      <label>Server</label>
+      <input type="text" placeholder="(jika ada)" />
+    </div>
+    <div class="form-group">
+      <label>Pilih Nominal</label>
+      <select>
+        <option>50 Diamond</option>
+        <option>100 Diamond</option>
+        <option>250 Diamond</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Pembayaran</label>
+      <select>
+        <option>QRIS</option>
+        <option>DANA</option>
+        <option>OVO</option>
+      </select>
+    </div>
+    <button class="submit-btn" onclick="alert('Pesanan dibuat! Silakan tunggu konfirmasi.')">Bayar Sekarang</button>
+  </section>
+
+  <footer>
+    © 2026 GameTopUp • Aman • Cepat • Terpercaya
+  </footer>
+
+  <script>
+    function openForm(game) {
+      document.getElementById('topupForm').style.display = 'block';
+      document.getElementById('gameTitle').innerText = 'Top Up ' + game;
+      window.scrollTo({ top: document.getElementById('topupForm').offsetTop, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
